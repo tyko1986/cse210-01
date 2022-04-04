@@ -21,6 +21,11 @@ class VideoService:
         pygame.draw.rect(constants.WIN, constants.BLACK, constants.BORDER)
 
     def draw_space(self, actor):
+        """Draws the space based on actor.
+
+        Args:
+            actor: The representation of the space.
+        """
         x = actor.get_position().get_x()
         y = actor.get_position().get_y()
         image = actor.get_image()
@@ -30,6 +35,11 @@ class VideoService:
         constants.WIN.blit(actor_object, (x, y))
 
     def draw_ship(self, actor):
+        """Draws the ship based on actor.
+
+        Args:
+            actor: The representation of the ship.
+        """
         x = actor.get_position().get_x()
         y = actor.get_position().get_y()
         image = actor.get_image()
@@ -41,10 +51,22 @@ class VideoService:
         constants.WIN.blit(actor_object, (x, y))
 
     def draw_bullets(self, actors):
+
+        """Draws the bullets fired by the spaceship.
+
+        Args:
+            actors : The representation of the bullet.
+        """
         for actor in actors:
             self.draw_bullet(actor)
 
     def draw_bullet(self, actor):
+        """Draws one single bullet fired by the ship.
+
+        Args:
+            actor : The representation of the bullet
+        """
+
         x = actor.get_position().get_x()
         y = actor.get_position().get_y()
         if actor.get_color() == constants.YELLOW:
@@ -55,6 +77,11 @@ class VideoService:
         pygame.draw.rect(constants.WIN, actor.get_color(), bullet)
     
     def draw_score(self, actor):
+        """Draw the points that every player got.
+
+        Args:
+            actor : The representation of the points.
+        """
         text = actor.get_text()
         id = actor.get_id()
         health_text = constants.HEALTH_FONT.render("Health: " + str(text), 1, constants.WHITE)
@@ -64,6 +91,11 @@ class VideoService:
             constants.WIN.blit(health_text, (constants.WIDTH - health_text.get_width() - 10, 10))
 
     def draw_winner(self, actor):
+        """Shows the winner ship.
+
+        Args:
+            actor : The representation of the winner ship.
+        """
         x = actor.get_position().get_x()
         y = actor.get_position().get_y()
         text = actor.get_text()
@@ -72,5 +104,6 @@ class VideoService:
         constants.WIN.blit(draw_text, (x - draw_text.get_width() / 2, y - draw_text.get_height()/2))
 
     def update_window(self):
-        #Actualiza la pantalla
+        """Updates the screen
+        """
         pygame.display.update()
