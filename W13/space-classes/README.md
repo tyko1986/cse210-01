@@ -36,6 +36,11 @@ root
 * Python 3.8.0
 * Pygame Python 3.7
 
+## How to Play
+
+There are two spaceships, a yellow on the left side of the screen and a red one on the right side, the yellow is controlled with the keys W,A,S, and D, to move up, left, down, and right. on the other hand the red ship is controlled witht the arrow keys of the keyboard.
+The yellow spaceship shoots with the left ctrl key, on the other side the red spaceship shoots with the right shift key.
+
 ## Authors
 -Isaias Zamir Sandoval Manzo
  fandemibarsa77@gmail.com
