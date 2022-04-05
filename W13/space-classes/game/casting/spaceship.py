@@ -22,6 +22,8 @@ class Spaceship(Actor):
         self._prepare_body()
 
     def moveLeft(self):
+        """Makes the spaceship move to the left
+        """
         x = self._position.get_x()
         y = self._position.get_y()
         if self._id == 1:
@@ -34,6 +36,8 @@ class Spaceship(Actor):
                 self.set_position(position)
 
     def moveRight(self):
+         """Makes the spaceship move to the right
+        """
         x = self._position.get_x()
         y = self._position.get_y()
         if self._id == 1:
@@ -46,6 +50,8 @@ class Spaceship(Actor):
                 self.set_position(position)
 
     def moveUp(self):
+        """Makes the spaceship move to up
+        """
         x = self._position.get_x()
         y = self._position.get_y()
         if self._id == 1:
@@ -58,6 +64,8 @@ class Spaceship(Actor):
                 self.set_position(position)
 
     def moveDown(self):
+        """Makes the spaceship to move down
+        """
         x = self._position.get_x()
         y = self._position.get_y()
         if self._id == 1:
@@ -70,6 +78,11 @@ class Spaceship(Actor):
                 self.set_position(position)
 
     def shoot(self, cast):
+         """Makes the ship to shoot a bullet.
+
+        Args:
+            cast : What makes the bullets to be added.
+        """
         if self._id == 1:
             bulletObj1 = cast.get_actor("bullets", 0)
             bulletObj1.add_bullet(self)
@@ -78,6 +91,8 @@ class Spaceship(Actor):
             bulletObj2.add_bullet(self)
 
     def _prepare_body(self):
+        """Sets the images and the sizes for the ships.
+        """
 
         if self._id == 1:
             position = Point(100, 300)

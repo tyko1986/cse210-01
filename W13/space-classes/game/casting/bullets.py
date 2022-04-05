@@ -16,14 +16,25 @@ class Bullets(Actor):
 
     """
     def __init__(self, id):
+        """Constructs new bullets"""
         super().__init__()
         self._id = id
         self._bullets = []
 
     def get_bullets(self):
+        """Gets the bullets of the ship.
+
+        Returns:
+            bullets: The bullet of the ship.
+        """
         return self._bullets
 
     def add_bullet(self, ship):
+         """Adds bullets to bu fired.
+
+        Args:
+            ship: The actor who receives the bullet.
+        """
         if len(self._bullets) >= constants.MAX_BULLETS:
             return False
 
@@ -43,6 +54,10 @@ class Bullets(Actor):
         
 
     def move_bullets(self):
+
+        """Makes the bullets go to a direction
+        """
+
         for each_bullet in self._bullets:
             position = each_bullet.get_position()
             x = position.get_x()
@@ -64,4 +79,11 @@ class Bullets(Actor):
             
 
     def get_id(self):
+
+          """Gets the actor's id
+
+        Returns:
+            int: The actor's id
+        """
+
         return self._id
